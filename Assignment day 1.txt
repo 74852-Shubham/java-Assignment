@@ -1,0 +1,264 @@
+Name-Shubham Badhe 
+prn no-230944520084
+-------------------------------------Assignment day1--------------------------------------------------------------------
+package day1;
+//display a table of a particular number 
+import java.util.Scanner;
+public class day1_2 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		System.out.println("Enter a number: ");
+		num= sc.nextInt();
+		for(int i=1;i<=10;i++) {
+			System.out.println(i*num);
+		}
+	}
+}
+
+--------------------------------------------------------------------------------------
+package day1;
+/*declare two numbers and one operator as a character. e.g. '+'
+using switch... case check which operator is declared and 
+accordingly perform the action.*/
+import java.util.Scanner;
+public class day1_3 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		char j;
+		int a,b;
+		System.out.println("Enter + for add and - for substraction");
+		j=sc.next().charAt(0);
+		System.out.println("Enter a: ");
+		a=sc.nextInt();
+		System.out.println("Enter b: ");
+		b=sc.nextInt();
+		switch(j) {
+		case '+':System.out.println("Addition= "+(a+b));
+		         break;
+		case '-':System.out.println("sunstraction= "+(a-b));
+		         break;
+		default:
+			System.out.println("Invalid input");
+		}
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------------
+package day1;
+
+/*Display numbers  1 to 10 using loop*/
+public class day1_4 {
+	public static void main(String args[]) {
+		for(int i=1;i<=10;i++) {
+			System.out.println(i);
+		}
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------
+package day1;
+
+/*Display numbers from 3 to 30 except number 24  using loop.*/
+public class day1_5 {
+	public static void main(String args[]) {
+		for(int i=3;i<=30;i++) {
+			if(i==24)
+				continue;
+			System.out.println(i);
+		}
+	}
+}
+-----------------------------------------------------------------------------------------------------------------
+package day1;
+
+import java.util.Scanner;
+
+/*Using if…….else if….  Else,  display whether result is  fail, pass,
+second class , first class, Distinction etc.*/
+
+public class day1_6 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int per;
+		System.out.println("Enter percentage: ");
+		per=sc.nextInt();
+		if(per>=35 && per <60) {
+			System.out.println("pass");
+		}
+		else if(per>=60 && per<70) {
+			System.out.println("second class");
+		}
+		else if(per>=70 && per<80) {
+			System.out.println("first class");
+		}
+		else if(per>=80 ) {
+			System.out.println("Distinction");
+		}
+		else
+			System.out.println("fail");
+		
+	}
+}
+---------------------------------------------------------------------------------------------------------
+package day1;
+
+/*display all prime numbers between 3 to 30*/
+public class day1_7 {
+	public static void main(String args[]) {
+		int flag;
+		for(int i=0;i<=30;i++) {
+			flag=0;
+			for(int j=2;j<i;j++) {
+				if(i%j==0) {
+					flag=1;
+				}
+			}
+			if(flag==0) {
+				if(i==0 || i==1)
+					continue;
+				System.out.println(i);
+			}
+		}
+	}
+}
+-----------------------------------------------------------------------------------------------------------
+package day1;
+/*using nested for loop display following :
+
+A  a
+A  b
+A  c
+
+B  a
+B  b
+B  c
+
+C  a
+C  b
+C  c
+*/
+
+public class day1_8 {
+	public static void main(String args[]) {
+		char ch ='A';
+		for(int i=0;i<3;i++) {
+			char d='a';
+		 for(int j=0;j<3;j++) {
+			System.out.print(ch);
+			System.out.print(d++);
+			System.out.println();
+		 }
+		ch++;
+		System.out.println();
+	  }
+	}
+}
+----------------------------------------------------------------------------------------------------------------
+package day1;
+
+/*  * 
+   * * 
+  * * * 
+ * * * * 
+* * * * *  */
+public class day1_9 {
+	public static void main(String args[]) {
+		for(int i=0;i<5;i++) {
+			for(int j=4;j>i;j--) {
+				System.out.print(' ');
+			}
+			for(int k=0;k<=i;k++) {
+				System.out.print('*');
+				System.out.print(' ');
+			}
+			System.out.println();
+		}
+	}
+	
+}
+-------------------------------------------------------------------------------------------------------------------
+package day1;
+
+/* * 
+  * * 
+ * * * 
+* * * * 
+ * * * 
+  * * 
+   *     */ 
+public class day1_10 {
+	public static void main(String args[]) {
+		
+		 for(int i=0;i<4;i++) {
+			 for(int j=3;j>i;j--) 
+			  { 
+				 System.out.print(' ');
+			  }
+		 for(int k=0;k<=i;k++) { 
+			 System.out.print('*'); 
+			 System.out.print(' ');
+			 }
+		    System.out.println();
+		  
+		 }
+		for(int l=0;l<3;l++) {
+			for(int r=0;r<=l;r++) {
+				System.out.print(' ');
+			}
+			for(int t=3;t>l;t--) {
+				System.out.print('*');
+				System.out.print(' ');
+			}
+			System.out.println();
+		}
+	}
+}
+------------------------------------------------------------------------------------------------------------------------
+package day1;
+/*1) accept two numbers and add them.
+2) accept two numbers and subtract them.
+3) accept two numbers and multiply them.
+4) accept two numbers and devide them.
+5) accept two numbers and check whether first number is greater or second number is greater or they are equal.
+6) accept a number and check whether it is divisible by 3 or not.
+*/
+
+import java.util.Scanner;
+public class day1_1 {
+	public static int add(int a,int b) {
+		int add=a+b;
+		return add;
+	}
+	public static int mult(int j,int k) {
+		int mult=j*k;
+		return mult;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a,b;
+		System.out.println("Enter a: ");
+		a=sc.nextInt();
+		System.out.println("Enter b: ");
+		b=sc.nextInt();
+		int sub=a-b;
+		
+			///addition,sub,mult,divide
+		System.out.println("addition="+add(a,b));
+		System.out.println("substraction="+sub);
+		System.out.println("multiplication="+mult(a,b));
+		
+		//greater of two number
+		if(a>b) {
+			System.out.println("a is greater");
+		}
+		else
+			System.out.println("b is greater");
+		//check if a is divisible by 3 or not
+		if(a%3==0) {
+			System.out.println("a is divisible by 3");
+		}
+		else
+			System.out.println("a is not divisible by 3");
+	}
+}
