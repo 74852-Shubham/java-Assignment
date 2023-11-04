@@ -1,0 +1,222 @@
+[Q1]
+package day8_Assign;
+import java.util.Scanner;
+class MyArithException extends Exception{
+	public MyArithException(String mess)
+	{
+		super(mess);
+	}
+}
+
+public class Calcultor {
+	static int caldouble(int num)throws  MyArithException{
+		if(num<0)
+			throw new MyArithException("num is less than zero");
+		else if(num==0){
+			throw new MyArithException("num is zero");
+		}
+		else {
+			return num*2;
+		}
+		
+	}
+	public static void main(String[] args) {
+		int num;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter value of num: ");
+		num= sc.nextInt();
+		try{
+		int res=caldouble(num);
+		System.out.println("double of num:"+res);
+		}
+		catch(MyArithException ae){
+			System.out.println(ae);
+		}
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------
+[Q3]
+package day8_Assign;
+
+import java.util.Scanner;
+s
+class MyException extends Exception{
+	MyException(String mess) {
+		super(mess);
+	}
+}
+public class demo{
+	public static void show1(int aa)throws MyException {
+		show2(aa);
+	}
+    public static void show2(int bb)throws MyException {
+		show3(bb);
+	}
+    public static void show3(int num) throws MyException {
+		if(num>10) {
+			throw new MyException("Number less than 0");
+		}
+		else{
+			System.out.println("Number: "+num);
+		}
+	}
+    public static void main(String[] args) {
+    	int num;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Number: ");
+		num=sc.nextInt();
+		try {
+		show1(num);
+		}
+		catch(MyException ae){
+			System.out.println(ae);
+		}
+	}
+}
+----------------------------------------------------------------------------------------------------------------------
+[Q5]
+---(developer side)---
+package developer01;
+public class MyResource implements AutoCloseable{
+	public  MyResource(int capacity) throws ResourceNotAllocatedException  {
+		if(capacity>100) {
+			throw new ResourceNotAllocatedException("Not sufficient space"); 
+		}
+	}
+	public void display() {
+		System.out.println("Sucessful");
+	}
+	public void close(){
+		System.out.println("Inside close method");
+	}
+}
+
+
+package developer01;
+
+public class ResourceNotAllocatedException extends Exception{
+	public ResourceNotAllocatedException(String mess) {
+		super(mess);
+	}
+}
+
+---(client side)---
+package client02;
+import developer01.*;
+public class demo implements AutoCloseable {
+
+		public static void main(String[] args) {
+			try {
+			MyResource ref = new MyResource(50);
+			}
+			catch(Exception ae) {
+				System.out.println("Sucessful");
+			}
+			
+		}
+
+		@Override
+		public void close() throws Exception {
+			// TODO Auto-generated method stub
+			
+		}
+
+}
+------------------------------------------------------------------------------------------------------------------------
+[Q4]
+---(developer side)---
+package developerrr;
+/*
+on the developer side create following checked exception:InvalidLengthException
+create necessary jar file and documentation.on client side
+public class Authenticator with
+a parameterized constructor which takes String as a password.
+this class also will have "done()" method with "successful authentication" message.
+Parameterized constructor should check the length of the password passed if it is less than 5 or more that 9 , it should raise "InvalidLengthException" 
+	[ constructor shouldn't handle the exception]
+create a class "Demo" with main
+	inside main function create the object of "Authenticator" class and invoke "done()" method.	*/
+
+public class Authenticator {
+	public Authenticator(String s) throws InvalidLengthException{
+		int len=s.length();
+		if(len<5 || len>9) {
+			throw new InvalidLengthException("invalid password");
+		}
+	
+	}
+	public void done () {
+		System.out.println("successful authentication");
+	}
+}
+
+package developerrr;
+
+public class InvalidLengthException extends Exception {
+	public InvalidLengthException(String ss){
+		super(ss);
+	}
+}
+
+---(client side)---
+package clientt;
+import developerrr.*;
+public class demo {
+
+	public static void main(String[] args) throws InvalidLengthException {
+		try {
+		Authenticator ref = new Authenticator("sujit");
+		ref.done();
+		}
+		catch(InvalidLengthException e) {
+			e.printStackTrace();
+			System.out.println(e);
+		}
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------
+[Q2]
+---(developer side)----
+package devpro10;
+
+public class NumberNotDivisibleBySevenException extends Exception{
+	public NumberNotDivisibleBySevenException(String s){
+		super(s);
+	}
+}
+
+---(client side)---
+package client10;
+
+import devpro10.NumberNotDivisibleBySevenException;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		try {
+		MyMath ref = new MyMath();
+		ref.disp(200);
+		}
+		catch(NumberNotDivisibleBySevenException ae) {
+			System.out.println(ae);
+			ae.printStackTrace();
+		}
+	}
+
+}
+
+package client10;
+import devpro10.*;
+public class MyMath {
+	public static void disp(int num) throws NumberNotDivisibleBySevenException {
+		if(num%7!=0) {
+			throw new NumberNotDivisibleBySevenException("Number not divisible by 7");
+		}
+		else {
+			System.out.println(num);
+		}
+	}
+
+}
