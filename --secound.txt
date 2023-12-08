@@ -1,0 +1,34 @@
+-->G:\Advance java\Day_1_Jakarta_EE\JDBC\execute_method_info
+
+
+import java.sql.*;
+public class jdb5 
+{
+	public static void main(String args[])
+	{
+		try
+		{
+Class.forName("com.mysql.jdbc.Driver");//load driver class
+String ss="jdbc:mysql://localhost:3306/mydb";//connection string
+Connection con=DriverManager.getConnection(ss,"root","root");//establish connection
+PreparedStatement pst=con.prepareStatement("update dept set loc=?");//to get ready to execute query
+//1)compile    2)pass  3)execute plan ready
+pst.setString(1,"Borivali");//to set location Borivali using replacing placeholder with 1
+boolean c=pst.execute();//actually query is fired at this location
+//in this case as update is used so it return false to--- read data from data used !c condition 
+if(!c)
+{
+	int mod=pst.getUpdateCount();//return the count of rows that were updated 
+System.out.println("mod is\t"+mod);
+if(mod>0)
+{
+	System.out.println("Records are successfully added");
+}
+}
+}
+catch(Exception ee)
+{
+	System.out.println(ee);
+}
+}
+}
