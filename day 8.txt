@@ -1,0 +1,53 @@
+Command dedign pattern:- invoker is loosely coupled with command. we can replace any command without modifying invoker.
+in command design pattern command is always is an interface, command implementation they fulfil that contract.
+invoker is loosely coupled with command.
+then ASK invoker to perform the action
+
+steps in command design pattern:-
+1.reciver
+2.concrete command(pass reciver as argument)
+3.invoker
+4.Invoke
+-----------------------------------------------------------------------------------------------------------
+cache
+Association
+
+cache-> when we ask object from database if the object present in cache it dosen't unnecessary search inside
+database because as many time we search inside database decreases performance.  
+
+1)first level cache(session level cache)
+objects or object can be store inside cache.
+-compulsary,bydefault
+-complete object is stored
+-it is available until we say session.evict()
+-Session cache(session object store reference of p)
+
+2)secound level cache(not compulsary)
+not compulary
+-information stored as key and value.
+(id-key  value-information)
+-secound level cache belong session factory(it is common for all sessions)
+-it has to get is explicitly
+
+
+3)Query cache
+-where query is stored.
+-when we want to execute same query multiple times.
+-(key is Query passed with parameters, values is result which comes from database)
+if we fire same query again insted of get from database it will get from query cache.
+-requires secound level cache.
+
+between java appln and database
+ject
+product ref2=(product)session.load(product.class,1);-->load the object which is present inside
+session
+-if session dosen't have that object it will go into database
+-session.evict(ref2);   -->object will go from session.(next time if you search it will search from database.
+
+EH cache(easy hybernate cache) is third party utility which provide secound level cache.
+
+System.out.println(factory.getStatistics().getSecondLevelCacheHitCount());  -->use to get count how many times we hit 2nd level cache
+-Product emp3=(Product)session2.get(Product.class,1);  it we get from secound level cache and store inside session 2
+-if object is in both levels then it will get it from first level cache.
+
+session.save(p); -->session will refer to that object
