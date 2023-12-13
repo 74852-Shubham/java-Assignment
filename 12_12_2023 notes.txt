@@ -1,0 +1,122 @@
+------------------------------------------------------------------------------------------------------------
+1) The chain of responsibility pattern:-
+chain of resp pattern
+void disp()
+each reciver caintain reference to another reciver if one cannot handle request then it passes to another.
+
+self referential structure
+one object of abstarct logger can call another object.
+
+cahin pattern demo 
+----------------------------------------------------------------------------------------------------------------
+observer design pattern:-
+subscribe to blog
+we get notif that something has come based on that load that one
+bolg-sub  we are -observer
+public and subscriber pattern(pub-sub pattern)
+stratergy(comparator)-userr design in treeeset or tree map(sort)
+
+-------------------------------------------------------------------------------------------------------------------
+----day 10----
+sprint 6_1
+what is spring
+released by Rod Johnson in 2005 which provide great support for jdbc,ORM,MVc web based Applications(with minimum efforts).
+
+Framework-a Framework is strucutre that you can build sofware on.
+e
+library-set of previously writtern code which can be use to build our code
+framework- supp struct help to write specific things.
+libry-no need to follow
+framework-compulsary.
+(freamework calls your code and your code call library.)
+
+spring framework
+(ioc) class-inversion of control  -->lightweight
+AOP(Aspect orienterd tech)
+MOP(model view controller)
+
+adv of spring:-
+core is foundation
+others are can select one of them.
+developers
+
+boilerCode-repetative code
+spring achives loose coupling
+even main function will be loosely coupled.
+wireing --solder class and weapn method
+Injection(reference to object dena)
+1)constructor Injection     Solder s1 =Solder(new Gun());
+2)setter injection          s1.setref(new sword());
+
+Dependecy Injection:-
+appln defines dependencies and these dependencies are satisfied at runtime by IOC container.
+
+xml-Spring bin configuration file.
+<property name="account"> calls setters
+classPathXmlApplicationContect(args[0]);  -->Spring bin config file
+
+Constructor Injection:-
+	<constructoe-arg value="Abc"/>
+use to call constructor
+if two argument then write same tag twice
+
+
+bean object scope in spring-->  There are 5 types of scope 
+1)singleton-by default scope(eager manner object creation)(maily used)
+2) prototype-each time we get bin new instance(Lazy manner object creation)(rarely used as each time new onject appln will be heavy)
+3)request-it gives same instance when call each time
+4)session-single instance of every HTTP session
+5)global session-portlet base web appln
+
+**without dependency:-as per xml prarent bin is not depend on another bin**
+**by default we have eager in singleton**
+if parent bin depend upon 
+
+Autowire in spring:-
+less code 
+<autowire="byname"></bean>
+Byname- is not such strong.
+bin id and myclass 1 cha reference sam e hota so setter of class2 gets called.
+BY type-it is stronger than byname
+**constructor always used bytype**
+
+AutoScanning:-
+bean ki chuutti (Bean id nahi hoga) @ component hoga
+
+<context:component-scan base-package="mypack"/>
+jo package dita gaya hai usiko target karega and id tayyyar ( @ annotation dhundega all calses me and treat them as bean)
+
+Autowired property:-
+@Autowired
+private Author Author;
+na to setter, nato parameterized constructor.
+
+--------------------------------------------------------------------------------------------------------------------
+---during revision notes---
+core parts of spring framework-->
+1)pojo
+2)dependency injection
+3)AOP
+4) Templates
+
+pojo should be loosely coupled.
+Service objects a class
+In spring the object that form backbone of your application and that are managed by spring IOC container.
+
+Dependency Injection--> It is the fundamental aspect of spring  thorugh which container "injects" container injects 
+objects into another objects or dependencies.
+
+Framework                                                                      libary
+1)A supporting structure which enables you to write a          set of priviously written code that you can use to build your code
+specific thing
+2)can write specific things as per requirement                 2)get all things even if it not required.
+3)must follow pattern of framework                             3)not need to follow pattern.
+4)it is skeleton you work with skeleton 
+
+**A framework calls your code and your code call's library.**
+
+instace member la autowired lihile ki direct setter call hoto.
+when we write  @Autowired
+    private Author author;
+object will be eligible for automatic injection and setter will be called implicitly and Author
+instace will be created and passed to setter.
