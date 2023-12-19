@@ -1,0 +1,16 @@
+REST-(representational
+
+java code deploy on server
+web services:-Interoperability,language indipe
+Soap & rest services.
+(SOAP)-simple object accept protocol
+when you call 
+
+                                        RPC[SPEC]
+RMI(java to java)                                                                SOAP
+
+JPA wo contract has to have some implementation (same like Fassad pattern).
+
+appli propertirs one of ways to configure database for your project
+the other way is 
+       yaml(yet another control language)
