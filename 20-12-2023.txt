@@ -1,0 +1,17 @@
+Log4j Logger Output:-
+if top level is set all levels below it will get message.
+
+J unit discussion:-(testing)
+Unit testing means testing.
+-Junit==freamework(platform to develop our own code)
+can test without server.
+can test even database is down.
+
+------------------Rought work(sir task)------------------------------------------------------
+Result result = JUnitCore.runClasses(SampleTest.class);//in one command run all classes.
+
+Taget t = new Target("I love java");
+String s=t.printmessage();
+System.out.println(s);
+System.out.println(t.salutationMessage());
+-----------------------------------------------------------------------------------------------
