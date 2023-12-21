@@ -1,0 +1,107 @@
+constant pointer can point to only non constant value.
+constant pointer means--ponter point to same address only.
+
+pointer to constant--
+datatype const pointer
+-->datatype const* ptr
+can point to any constant or non constant but its value cannot be changed using pointer
+
+
+datatype const *const pointervar=address
+pointer ektar tyachi value pn change nahi karu shakt and dusrikade point pn nahi karu shakt.
+
+reference is just a another name to the variable 
+reference once initialized cannot be changed.
+array of pointer is possible but array of reference is not possible.
+reference must be initialized
+int &ref=num;
+
+ Function returning reference
+// function call can be on the left side
+
+non constant reference constant variable la point nahi karu shakt.
+constant pointer cannot point constant varible
+constant can point to constant, constant cannot point to nonconstant.
+non constant reference cannot refer to constant variable 
+
+cin and cout are objects of istream and ostream classes respectively.
+cin needs >> (extraction operator)
+cout needs << (insertion operator)
+
+flushes the output buffer,before sending the value which u actually wants to print.(endl more reliable than \n)
+And only one copy of the library needs to get loaded into the memory
+ --space,which saves memory and disk space.
+--if you have three different 
+executables that need a static library, this static library must be linked into all three executables. Whereas dynamic
+ library if u need in three different executables ,they all can share the same dll file. 
+
+function overloading:-
+Name mangling is also known as "name decoration".
+Name mangling means different names are given to the different versions of an overloaded function.
+
+memory leak-->pointer pointing to that memory ani pointer udun takla.(or pointer goes out of scope)
+Dangling pointer-->when we perform delete operation on pointer but pointer still holding that address which is alredy free.
+
+new 
+a) it is like malloc or calloc
+b) it is used to allocate memory dynamically from heap or free store.
+c) it is an operator and not a function.
+d) no need to use sizeof in case of new
+e) new invokes constructor 
+*/
+
+/*
+delete
+a) it is like free
+b) it is used to deallocate memory which is allocated dynamically.
+c) it is an operator and not a function.
+d) it invokes destructor.
+
+if global and local variable name is same then to acess global use ::val1 
+
+struct members are public by default
+
+
+inline function:-
+Since sum() is inline function compiler copies the
+//
+code from the function definition directly into
+//
+the code of the calling function
+inline
+void sum(int num1,int num2)
+{
+cout
+<<“Sum of num1 and num2=”<<num1+
+}
+int main()
+{
+int num1=10,int num2=20;
+cout
+First call to sum function
+sum(num1,num2);
+}
+
+An inline function is one for which the compiler copies the code from the function definition directly
+into the code of the calling function rather than creating a separate set of instructions in memory.
+•
+If we implement member function inside structure/class then it is by default treated as inline
+•
+The inline specifier is only a suggestion/request to the compiler, that an inline expansion can be
+performed; the compiler can ignore the suggestion.
+•
+We can use the inline function when performance is needed
+•
+Type checking is done while calling the function.
+•
+We can use the inline function over macros since macros are not type check.
+•
+Inline functions are used for avoiding the time overhead
+
+oop's:-
+Five rules [Source: Alan Kay]:
+• Everything is an object.
+• A program is a set of objects telling each other what to do by sending messages.
+• Each object has its own memory (made up by other objects).
+• Every object has a type.
+• All objects of a specific type can receive the same messages.
