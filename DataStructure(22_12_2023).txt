@@ -1,0 +1,22 @@
+stack-->4G,5G(whats app messages)LIFO
+Queue->
+tree-->facebook connection
+graph-->maps
+
+IN MEMORY:
+Mostl
+
+
+On Acess:
+ linear:-
+     On after another acess in sequence,easy to code,slow due to acess method
+eg.stack,queue,linked list
+
+ Non-liner:-
+     for access direct/guided(function),complex to code due to needs
+      eg.tree(guiding),graph(direct)
+
+ADT:
+ abstract datatype type
+    set of operation one must code to implement a data
+(encapsulation+abstraction)
