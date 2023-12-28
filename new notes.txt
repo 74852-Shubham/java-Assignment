@@ -1,0 +1,25 @@
+command design pattern-is a one which invoker a command without being tighly coupled with a command.
+
+Folling particirnt are there in command design pattern
+1)reciver 
+2)command 
+3)invoker 
+4)client
+thread class is loosely coupled with run() in runnable class.
+
+Association:-not neccesaary to have only one class in oject oriented programming(Soln-Association)
+one to one :company has
+
+in the absence of "joinTable" annotation inside :"Employee.java" and mappped inside project class, hybernate will create
+two association.
+
+employee_project
+   will show whatever we performed
+
+compony instance 
+     Employee instance/s
+store Employee inside it.
+we associate that set of Employee inside set
+
+*
+
