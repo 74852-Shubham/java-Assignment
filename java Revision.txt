@@ -1,0 +1,195 @@
+I18N
+0 to 65535-->16 
+16 bit means 2 bytes use to store unicode characters.
+java code is compile once and run anywhere.
+Internationalization--> client front different countries see out pages in different languages.
+local members must be initilized before use.
+native code-->native code written in c,c++(as it is near to machine level for faster acess.)
+native methods-->To improve performance of System.
+if we want to achive machine level communication.
+if dont want to use java code.
+JRE_:-(java runtime environment) communicates between java application and computer hardware.
+sc.next()-read upto space.
+sc.nextLine()-->reads after space also.
+NUllpointer Exception:- When we invoke method on null reference we get NullPointer Exception.lo 
+Object is created:- as soon as object is created memory allocated for instance member and constructor get called.
+types of constructors:-
+1)default/no-arg constuctor.
+2)parameterized constructor
+
+java madhe destructor method nasto. 
+just before object gets garbage collected finalize method get called.
+
+-->we can acess static data members inside static method.
+1)we cannot acess non static data in static member function.(because we call static data members at class loading time at that time Nonstatic members dosen't get memory allocated. 
+2)we can acess static data in non static member fun.(becase to acess non-static fun we need to create obj at that time static members alredy got memory)
+
+-->class loaders loads java class to jvm
+
+static member fun need to be called expicitly but static block  get executed implicitly as soon as class get loaded.
+static block usually use to assign initialize static data members.
+
+Non static block executed as many time as many objects created.
+Syntax:-
+{
+
+}
+
+final keyword(just like constant):-
+final keyword can be applied to:-
+a)Instance Members
+b)class variables/static member0s
+c)class
+d)member fun
+e)local variables
+
+-->final members can be initialized inside constructor only.
+
+Overloading:-
+same function name with different no of arguments.
+
+-->we cannot override final method(it will give error)
+
+-->Overriding method should have same or more Acessibility than overriden method.
+
+-->Interface methods are bydefault public and abstract.
+
+-->Instance checks is a relationship and returns true or false.
+
+-->if overriden method has parent written type and overriding method has child return type.
+then it is called covarient written type.
+
+-->in overriding in child class we provide specific implementation of child class in parent class constructor.
+
+-->composition example:- create object of house class and store reference of rooms inside house obj as when house
+ is destroyed rooms also get destroyed.
+
+-->Aggregation:- create object of department and store teacher class reference but teacher object is refered by another ref also
+so as dept destroyed but teacher does not get destroyed.  
+
+-->White Box-we know that on which reference we are methods
+black box-we dont know on which object we are calling method.
+
+-->we cannot override static method
+-->overriding method cannot be directly static if overriden is not static
+
+-->overriding method should have same or more acessibility than overriden method.
+
+-->equals method of object class if two objects are equal acc to this there there hashcode must be same or
+even if equals method return false by calling getHashcode() may return same same hashcode.
+
+-->ToString method of object class.
+public String toString() 
+	{
+	        return getClass().getName() + "@" + Integer.toHexString(hashCode());
+    	}
+
+-->we can call static methods with help of ref even if methods are reference is null.
+
+-->when base and sub contain two overloaded static method and static block, when we call
+ base static method with sub ref, sub class dosen't get loaded.
+
+-->child cha class load zala tr parent cha class load honarch with static method invocation.
+reverse may be false.
+
+-->enum is user defined datatype(set of predefined values)
+enum values are not numerical they are fixed
+
+-->enum values are internally public static final
+
+-->gc method use to request for garbage collection.
+public static void gc()
+ {
+        Runtime.getRuntime().gc();
+ }
+
+-->equals method are overriden in string it will only check string equality not reference.
+equals methods is slow as compared to '==' operator.
+
+-->s.intern() method checks if string s string exist in string pool if yes then return 
+reference of it. if no then adds the string to string pool and return reference of it.
+
+-->if we try to modify existing string then new string get created.
+
+-->Stringbuilder sb1 = new StringBuilder("hello");
+is used to modify existing string.(it is mutable)
+
+System.out.println("" +""+a);   uses stringBuilder class internally.
+
+-->Inner classes used for event handling mechanism and to implement helper classes class.
+class within class(hidden from all other classes.
+
+-->Outer.inner i=o1.new inner();  //Syntax to instantiate inner class.
+
+-->top level classes (public or default) && (non nested)
+
+-->nested classes-- 1)static nested   2)non static nexted(inner classes)
+classes defined inside any method are called  local or inner classes.
+
+-->internally outer and inner classses are represented as 
+1.	Outer.class
+2.	Outer$Inner.class
+
+--nested classes(can achive easy maintainance and encapsulation).
+
+-->wrapper classes are used to wrap primitives.
+-->all the wrapper classes are derived from "java.lang.Object". They all are "final".
+
+-->Autoboxing converting primitive to Wrapper.
+int num=10;
+ToWrap normally:-
+Integer ob= new int(num);//wrapped
+Integer ob=num;//Autoboxing
+Unboxing:-
+int num=ob.intVal();//unwrapping normally
+int num=ob;//Auto Unwrapping
+
+-->getClass.getName()==>it returns the name of that class to which class "Class" instance represents.
+
+-->void disp(int ...k)  // it can take 0 or more arguments
+	{
+		for(int i=0;i<k.length;i++)
+		{
+			S.o.p(k[i]);.
+
+		}
+
+	}
+
+-->Rules For Oveloading methods using Widening, boxing, and var-args.
+
+1) Primitive widening uses the "smallest" method argument possible.
+2) Used individually, boxing and var-args are compatible with overloading.
+3) You cannot widen from one wrapper type to another (IS-A fails).
+4) You cannot widen and then box (An int can't become Long).
+5) You can box and then widen.(An int can become an Object, via Integer).
+
+
+Bridge Method:- lets consider class Base {
+public object v1(){}
+}
+class sub extends base{
+class string v1{}
+}
+
+for compiler v1  method of sub and base are diff for this compiler creates bridge as calling 
+sub class method from base class method.
+(sub madhe varchya method chi ek copy tyyar karto)
+
+-->parent ki protected method child me directly Accessible hai.(only)
+
+
+-------------------------------day 8--------------------------------------------
+Exception-->Interrupt normal flow of execution.
+
+-->exception occur zale tr tya exception class cha object create karaych and throw karaych.
+
+-->try{the statement which may throw exception}
+catch(){to handdle exception raised by code}
+finally{contain code/statement that must be executed in any condn even if exception occurs}
+
+-->finally() file,socket,database connection etc. since you can not rely upon "finalized" method for the same task.
+
+//ARM(Automatic Resource Management)-->inside ARM we must write only those classes which implements Autoclosable or closable interface.
+
+-->Assertions are used to test the program. The advantage is assertions are by default disable, u need to enable them.
