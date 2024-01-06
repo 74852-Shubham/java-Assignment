@@ -179,7 +179,7 @@ sub class method from base class method.
 -->parent ki protected method child me directly Accessible hai.(only)
 
 
--------------------------------day 8--------------------------------------------
+-------------------------------day 8---------------------------------------------------------------------------------------------------------
 Exception-->Interrupt normal flow of execution.
 
 -->exception occur zale tr tya exception class cha object create karaych and throw karaych.
@@ -192,4 +192,128 @@ finally{contain code/statement that must be executed in any condn even if except
 
 //ARM(Automatic Resource Management)-->inside ARM we must write only those classes which implements Autoclosable or closable interface.
 
--->Assertions are used to test the program. The advantage is assertions are by default disable, u need to enable them.
+-->Assertions are used to test the 'program. The advantage is assertions are by default disable, u need to enable them.
+
+-->NoClassDefFound(Error) & classNotFound(Exception)
+NoClassDefFoundError comes when class was present during compile time but not available at runtime.
+classNotFound(Exception comes when we tries to load class explicitly using class.forName() but class was not there at that path so class not found exception.
+
+-->procedure to create checked and unchecked exception:-
+public class Myexception extends from Exception{//checked exception
+
+}
+public class Myexception Extends from RuntimeException{//unchecked Exception
+}
+
+-->In case of inheritance overriding method of sub can declare same exception as overriden method of base but it is not compulsary for overriden method.
+-->overriding method if sub cannot declare exception if overriden method haven't declare it.
+
+-->overriding and checked-exception rule :
+a) overriding  method may not declare any checked exception.
+b) overriding method can declare same checked exception or its sub-type declared by overriden method.
+c) overriding method can not declare checked exception not declared by overriden method.
+
+-->object class does not implement clonable interface. because founders wanted to gievn choice to programmers if want clone then implement clonable.
+
+-->java.lang.object class 
+protected Object clone() throws CloneNotSupportedException
+if we want to use clone method then implement clonable and override clone() Method.
+
+-->clone method is protected in object class. 
+
+-->immutability rules-->1)don't provide setters
+2)dont allow change/modify through immutable class ref from another class.
+3)don't share reference of immutable class.
+
+-->subclass cannot modify private properties of parent but it behave as if it has modified it.
+
+-->immutability Achive karnyasathi class la final banvayche so that malacious subclass cannot change it.
+
+-->Reflection(capability to load given class and find everything about it)
+Constructor ctor=null;
+			ctor=c.getDeclaredConstructor(String.class);
+			Object second=null;
+			second=ctor.newInstance("Welcome");
+-->The reflection API represents, or reflects, the classes, interfaces, and objects in the current Java Virtual Machine. You'll want to use the reflection API if you are writing development tools such as debuggers, class browsers, and GUI builders. With the reflection API you can: 
+
+1) Determine the class of an object. 
+2) Get information about a class's modifiers, fields, methods, constructors, and superclasses. 
+3) Find out what constants and method declarations belong to an interface. 
+4) Create an instance of a class whose name is not known until runtime. 
+5) Get and set the value of an object's field, even if the field name is unknown to your program until runtime. 
+6) Invoke a method on an object, even if the method is not known until runtime. 
+7) Create a new array, whose size and component type are not known until runtime, and then modify the array's components
+
+-->Method m=c.getDeclaredMethod("disp1",null);
+
+-->m.setAccessible(true);   (to Acess private method of class)
+
+-->jevha aapn class chya constructor madhe System.setSecurityManager(new securityManager()); tevha aapn reflection api ne tyachya private properties Acess karu nahi shakt.(even not with setAccessible true)
+
+-->class.forName() is used to locate and load the class.
+
+-->class Lock- to apply lock on instance of class class.(To have synchronyzed static methods or blocks).
+
+-->object lock-->to have synchonyzed non-static methods.
+
+-->In multithreading we have to implement interface Runnable which contain only one method run() we have to override run method. 
+create thread from main =>Thread t1=new thread();
+t1.start();   (from this call goes to overriden run method )
+
+-->process program under execution
+
+-->thread is a part of program in exceution.
+
+-->process based multitasking=> more than one process execution at a time. e.g excel and word are running simultaniously.
+
+-->thread based multitasking=>more than one thread at a time. e.g inside excel printing and coping file at a time.
+
+--> in case of multitasking actually cpu doing context switching.
+
+-->Application of multi-threading in java :- due to multithreading feature, java has become effective on server side. e.g  Servlet , JSP etc.
+
+-->Thread-Schedular
+a) pre-emptive-->forcefully terminate the process.
+b) time-slice-->give fixed cpu time to each process.
+ 
+
+-->four imp steps in multiThreading=> 
+1.create thread(class implements runnable)
+2.define thread execution body(implement run())
+3.register thread with thread scheduler(create thread and call Thread.start()).
+4.exceute thread(done Automatically)
+
+methods--> start()=>register thread with thread schedular
+run()-->call by jvm thread Schedular to execute thread body.
+join()-->t1.join() it will wait until t1 executes completly.
+
+-->There are two ways to create multi-threading application.
+1) extends Thread
+2) implements Runnable 
+
+-->In case of Extends Thread==> Thread t1= new Thread();
+MYThreadClass implements Runnable==> MYThreadClass ob= new MYThreadClass();
+Thread t1 = new Thread(ob);
+Thread t2 = new Thread(ob);
+
+-->Thread class implements Runnable
+
+-->"synchronization" is a solution to the race condition.(in Sysnchronyzation one thread aquaire lock and other thread will be in seeking lock state.
+
+-->a) wait=>it will make thread , release the lock and go to wait pool.
+
+b) notify=>it will make the thread to move from wait pool to seeking lock state.
+
+c) notifyAll=>it will make all the threads to move from wait pool to seeking lock state.
+
+-->wait releases the lock on an object , sleep does not.
+
+-->main thread always excutes first user defined thread taken care by jvm
+
+-->Whenever blocked thread gets interrupted, it throws "InterruptedException".
+
+-->born
+	runnable
+	running
+	blocked
+	dead
