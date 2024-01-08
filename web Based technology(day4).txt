@@ -1,0 +1,27 @@
+t=setInterval("alert('hi'),1000);  -->use to execute after specific interval.
+t=setTimeout("alert('hi')",6000);  -->use to execute only once  after timeout.
+
+DOM Nodes-->document is document node.
+element is element node.
+text is text nodes.
+attributes is attribute node.
+comment is comment node.
+
+-->inner.HTML =>to get values of text nodes.
+
+-->nodeName of text is #text
+-->nodeName of document is #Doc.
+
+-->EAT==>123                        CD==>8,9
+(Element Attribute text)    (comment document)
+
+-->toggle =>jr tag array madhe asel(check using contains method) tr remove it and return false
+and jr tag nasel tr add it in array(div class)  and return true.
+
+-->div tag used to get box like structure in webpage.
+
+-->var   x   =   document.getElementById("myDIV").querySelectorAll("p");
+get all elements where id is myDIV and selectAll tag starting with letter 'p'.
+
+-->The querySelector() method only returns the first element that matches the 
+specified selectors. To return all the matches, use the querySelectorAll() method instead.
