@@ -1,0 +1,107 @@
+JSP-->Advance version of servlet.
+server side tech
+middle tier tech like servlet.
+A static html remains the same ir fixed, in terms of the content it dispays.
+dynamic html is the opposite, its content changes on action a user has made on the page before.
+(static html+elements that can processed on server)
+
+difference between jsp and sevlet:
+jsp allows you to mix static html elemenst that can be processed on server.
+in case servlet html can be generated dynamically.
+jsp is faster than servlet.
+
+MVC:-model-pojo
+view-jsp
+controlleer -servlet
+
+MVC Model view controller
+Model-->pojo
+view-->jsp
+controller-servlet
+
+when jsp is requested for first time:-
+1.jsp is converted into.java
+2.servlet is compiled by a web container.
+.class is loaded
+instantiating using public no arg constructor.
+inialized using init()
+thread is created and retrived from threadpool
+resquest and response created.
+service method get called
+
+fro subsequent request:-
+Thread is created and retrived from threadpool
+request adn response created.
+service method is created.
+
+-->Lifecycle method of jsp::-
+public void init(){}
+public void _jspService(HttpServelet request,HttpServletResponse response)(){}
+public void jsp destroy(){}.
+
+Implicit objects  in jsp::-
+implicit object are set of java objects that the JSP Container makes available to-*
+
+implicit objects in JSO::-
+->JspWriter->out
+httpServletRequest->request
+httpserverletResponse->response
+HttpSession->session
+ServletContect->context
+ServletConfig->config
+PageContext->PageContext
+Object->Page
+JSPException -exception.
+
+requestDispatcher rd=request.getRequestDispatcher("forwardedServ");
+re.forward(request,response);
+
+RequestDispatcher rd=request.getRequestDispatcher("forwardedSerb);
+rd.forward(request,response);
+
+byDefault scope is page
+page request session application
+setter and getter in jsp
+<% ob1.setNum(100);%>
+<%=ob1.getNum()%>
+if the parameter name of html and datamember name of class is same then 
+do not write the no of setProperty again 
+but we require to write get property again and again.
+here we 
+behind every sucessful tag there is a java code.
+Attirbite in JSP::-
+
+scope of page is created when we run particualr jsp appln get destroyee
+
+if El dosen't give you expected output write following line inside each jsp page.
+<%@pageisELIgnored="false"%>
+strMod strob=replaceSpaces;
+string str;
+str= strob("hello"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
